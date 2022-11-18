@@ -90,9 +90,9 @@ int main() {
 
 	{ // switch문을 이용한 정렬 실행
 		switch (number) {
-		case 1:
-			selection(arr);
-		}
+			case 1:
+				selection(arr);
+			}
 
 	}
 }
