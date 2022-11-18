@@ -12,6 +12,8 @@ int main() {
 	int number;
 
 	//난수 생성하기
+	int arr[25];
+
 
 
 
@@ -45,7 +47,8 @@ int main() {
 
 	{ // switch문을 이용한 정렬 실행
 		switch (number) {
-
+		case 1:
+			selection(arr);
 		}
 
 	}
