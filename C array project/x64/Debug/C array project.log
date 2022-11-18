@@ -1,9 +1,3 @@
 ﻿  project.c
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(75,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(21): warning C4716: 'bubble': 값을 반환해야 합니다.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(16): warning C4716: 'insertion': 값을 반환해야 합니다.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(11): warning C4716: 'selection': 값을 반환해야 합니다.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(26): warning C4716: 'quick': 값을 반환해야 합니다.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(31): warning C4716: 'merge': 값을 반환해야 합니다.
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(36): warning C4716: 'heap': 값을 반환해야 합니다.
+C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(88,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C array project.vcxproj -> C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\x64\Debug\C array project.exe

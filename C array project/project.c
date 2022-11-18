@@ -6,32 +6,45 @@
 #include <stdlib.h>
 
 // 선택 정렬
-int selection(int arr[25]) {
+void selection(int arr[25]) {
+	int min;
+	int temp;
+	for (int i = 0; i < 25; i++) {
+		min = i;
+		
+		//    정렬되지 않은 값중            가장 작은값 선택   min에 저장
+		for (int j = i + 1; j < 25; j++) if (arr[min] > arr[j]) min = j;
 
+		// i번째 값과 가장 작은값 교환
+		temp = arr[i];
+		arr[i] = arr[min];
+		arr[min] = temp;
+
+	}
 }
 
 // 삽입 정렬
-int insertion(int arr[25]) {
+void insertion(int arr[25]) {
 
 }
 
 // 버블 정렬
-int bubble(int arr[25]) {
+void bubble(int arr[25]) {
 
 }
 
 // 퀵 정렬
-int quick(int arr[25]) {
+void quick(int arr[25]) {
 
 }
 
 // 합병 정렬
-int merge(int arr[25]) {
+void merge(int arr[25]) {
 
 }
 
 // 힙 정렬
-int heap(int arr[25]) {
+void heap(int arr[25]) {
 
 }
 
