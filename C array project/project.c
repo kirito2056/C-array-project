@@ -9,6 +9,7 @@
 void selection(int arr[25]) {
 	int min;
 	int temp;
+
 	for (int i = 0; i < 25; i++) {
 		min = i;
 		
