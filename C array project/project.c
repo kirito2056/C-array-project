@@ -5,6 +5,37 @@
 #include <time.h>
 #include <stdlib.h>
 
+// 선택 정렬
+int selection(int arr[25]) {
+
+}
+
+// 삽입 정렬
+int insertion(int arr[25]) {
+
+}
+
+// 버블 정렬
+int bubble(int arr[25]) {
+
+}
+
+// 퀵 정렬
+int quick(int arr[25]) {
+
+}
+
+// 합병 정렬
+int merge(int arr[25]) {
+
+}
+
+// 힙 정렬
+int heap(int arr[25]) {
+
+}
+
+
 //메인함수 시작
 int main() {
 
@@ -21,7 +52,6 @@ int main() {
 
 		//* 출력
 		for (int i = 0; i < 35; i++) printf("*");
-
 		printf("\n");
 
 		//정렬 구분 및 번호 안내
