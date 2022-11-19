@@ -7,6 +7,30 @@
 #include <stdlib.h>
 #include <time.h>
 
+// 정렬 종류 출력
+void print_array() {
+
+	//* 출력
+	for (int i = 0; i < 35; i++) printf("*");
+	printf("\n");
+
+	//정렬 구분 및 번호 안내
+	printf("*** 여러가지 정렬 프로그램 구현 ***\n");
+	printf("***                             ***\n");
+	printf("*** 1. 선택(selection) 정렬     ***\n");
+	printf("*** 2. 삽입(insertion) 정렬     ***\n");
+	printf("*** 3. 버블(bubble) 정렬        ***\n");
+	printf("*** 4. 퀵(quick) 정렬           ***\n");
+	printf("*** 5. 합병(merge) 정렬         ***\n");
+	printf("*** 6. 힙(heap) 정렬            ***\n");
+	printf("*** 7. 종료(quit) 정렬          ***\n");
+
+	//* 출력
+	for (int i = 0; i < 35; i++) printf("*");
+	printf("\n");
+
+}
+
 // 선택 정렬
 void selection(int arr[]) {
 	int min;
@@ -68,29 +92,8 @@ int main() {
 	srand((unsigned)time(NULL));
 	for (int i = 0; i < 25; i++) arr[i] = 1 + rand() % 100;
 
-
-	{ // 소스코드 동작 시작
-
-		//* 출력
-		for (int i = 0; i < 35; i++) printf("*");
-		printf("\n");
-
-		//정렬 구분 및 번호 안내
-		printf("*** 여러가지 정렬 프로그램 구현 ***\n");
-		printf("***                             ***\n");
-		printf("*** 1. 선택(selection) 정렬     ***\n");
-		printf("*** 2. 삽입(insertion) 정렬     ***\n");
-		printf("*** 3. 버블(bubble) 정렬        ***\n");
-		printf("*** 4. 퀵(quick) 정렬           ***\n");
-		printf("*** 5. 합병(merge) 정렬         ***\n");
-		printf("*** 6. 힙(heap) 정렬            ***\n");
-		printf("*** 7. 종료(quit) 정렬          ***\n");
-
-		//* 출력
-		for (int i = 0; i < 35; i++) printf("*");
-		printf("\n");
-
-	}
+	// 정렬 종류 출력
+	print_array();
 
 	{ // 번호 입력 받기
 		printf("번호 입력 : ");
@@ -101,13 +104,28 @@ int main() {
 		switch (number) {
 			case 1:
 				selection(arr);
-
-				// 정렬 종류 출력
-				printf("<선택 정렬>\n");
-
 				break;
+			case 2:
+				insertion(arr);
+				break;
+			case 3:
+				bubble(arr);
+				break;
+			case 4:
+				quick(arr);
+				break;
+			case 5:
+				merge(arr);
+				break;
+			case 6:
+				heap(arr);
+				break;
+			case 7:
+				printf("<종료>");
+				exit(0);
 
-			}
+
+		}
 
 	}
 
