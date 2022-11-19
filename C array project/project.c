@@ -33,9 +33,34 @@ void print_array() {
 	printf("\n");
 }
 
-// 정렬 종류별로 함수 실행하기
-void start_function(int number) {
-
+// switch로 정렬 종류별로 함수 실행하기
+void start_function(int number, int arr[]) {
+switch (number) {
+	default:
+		printf("<번호 오류>\n");
+		break;
+	case 1:
+		selection(arr);
+		break;
+	case 2:
+		insertion(arr);
+		break;
+	case 3:
+		bubble(arr);
+		break;
+	case 4:
+		quick(arr);
+		break;
+	case 5:
+		merge(arr);
+		break;
+	case 6:
+		heap(arr);
+		break;
+	case 7:
+		printf("<종료>");
+		exit(0);
+	}
 }
 
 // 선택 정렬
@@ -115,35 +140,7 @@ int main() {
 		scanf("%d", &number);
 	}
 
-	{ // switch문을 이용한 정렬 실행
-		switch (number) {
-			default :
-				printf("<번호 오류>\n");
-				break;
-			case 1:
-				selection(arr);
-				break;
-			case 2:
-				insertion(arr);
-				break;
-			case 3:
-				bubble(arr);
-				break;
-			case 4:
-				quick(arr);
-				break;
-			case 5:
-				merge(arr);
-				break;
-			case 6:
-				heap(arr);
-				break;
-			case 7:
-				printf("<종료>");
-				exit(0);
-		}
-
-	}
+	// 정렬 
 
 	{// 결과값 출력
 		printf("%d\n", number);
