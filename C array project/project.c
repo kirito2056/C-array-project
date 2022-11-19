@@ -103,7 +103,7 @@ int main() {
 	{ // switch문을 이용한 정렬 실행
 		switch (number) {
 			default :
-				printf("<번호 오류>");
+				printf("<번호 오류>\n");
 				break;
 			case 1:
 				selection(arr);
