@@ -33,42 +33,16 @@ void print_array() {
 	printf("\n");
 }
 
-// switch로 정렬 종류별로 함수 실행하기
-void start_function(int number, int arr[]) {
-switch (number) {
-	default:
-		printf("<번호 오류>\n");
-		break;
-	case 1:
-		selection(arr);
-		break;
-	case 2:
-		insertion(arr);
-		break;
-	case 3:
-		bubble(arr);
-		break;
-	case 4:
-		quick(arr);
-		break;
-	case 5:
-		merge(arr);
-		break;
-	case 6:
-		heap(arr);
-		break;
-	case 7:
-		printf("<종료>");
-		exit(0);
-	}
-}
-
 // 선택 정렬
 void selection(int arr[]) {
+	printf("<선택 정렬>\n");
+
 	int min;
 	int temp;
 
 	for (int i = 0; i < 25; i++) {
+
+		// 정렬 종류 출력
 		min = i;
 		
 		//    정렬되지 않은 값중            가장 작은값 선택   min에 저장
@@ -86,8 +60,8 @@ void selection(int arr[]) {
 void insertion(int arr[]) {
 	for (int i = 0; i < 25; i++) {
 		for (int j = i; j > 0; j--) {
-			if (arr[j - 1] > arr[j]) {
-				
+			if ( arr[j-1] > arr[j]) {
+
 			}
 		}
 	}
@@ -140,7 +114,35 @@ int main() {
 		scanf("%d", &number);
 	}
 
-	// 정렬 
+	{ // switch문을 이용한 정렬 실행
+		switch (number) {
+			default :
+				printf("<번호 오류>\n");
+				break;
+			case 1:
+				selection(arr);
+				break;
+			case 2:
+				insertion(arr);
+				break;
+			case 3:
+				bubble(arr);
+				break;
+			case 4:
+				quick(arr);
+				break;
+			case 5:
+				merge(arr);
+				break;
+			case 6:
+				heap(arr);
+				break;
+			case 7:
+				printf("<종료>");
+				exit(0);
+		}
+
+	}
 
 	{// 결과값 출력
 		printf("%d\n", number);
