@@ -1,3 +1,2 @@
 ﻿  project.c
-C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(88,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C array project.vcxproj -> C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\x64\Debug\C array project.exe

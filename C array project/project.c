@@ -1,12 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 //기본적인 입출력 라이브러리
 #include <stdio.h>
 
 // 난수 생성을 위한 라이브러리 불러오기
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
 
 // 선택 정렬
-void selection(int arr[25]) {
+void selection(int arr[]) {
 	int min;
 	int temp;
 
@@ -49,6 +51,9 @@ void heap(int arr[25]) {
 
 }
 
+void array_print(int number) {
+	
+}
 
 //메인함수 시작
 int main() {
@@ -59,7 +64,9 @@ int main() {
 	//난수 생성하기
 	int arr[25];
 
-
+	//난수 생성 및 배열에 저장
+	srand((unsigned)time(NULL));
+	for (int i = 0; i < 25; i++) arr[i] = 1 + rand() % 100;
 
 
 	{ // 소스코드 동작 시작
@@ -82,6 +89,7 @@ int main() {
 		//* 출력
 		for (int i = 0; i < 35; i++) printf("*");
 		printf("\n");
+
 	}
 
 	{ // 번호 입력 받기
@@ -93,7 +101,20 @@ int main() {
 		switch (number) {
 			case 1:
 				selection(arr);
+
+				// 정렬 종류 출력
+				printf("<선택 정렬>\n");
+
+				break;
+
 			}
 
 	}
+
+	{// 결과값 출력
+		printf("%d\n", number);
+
+		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+	}
 }
+
