@@ -3,9 +3,12 @@
 //기본적인 입출력 라이브러리
 #include <stdio.h>
 
-// 난수 생성을 위한 라이브러리 불러오기
+// 난수 생성을 위한 라이브러리
 #include <stdlib.h>
 #include <time.h>
+
+// 창 크기 조절을 위한 라이브러리
+#include <Windows.h>
 
 // 정렬 종류 출력
 void print_array() {
@@ -28,6 +31,10 @@ void print_array() {
 	//* 출력
 	for (int i = 0; i < 35; i++) printf("*");
 	printf("\n");
+}
+
+// 정렬 종류별로 함수 실행하기
+void start_function(int number) {
 
 }
 
@@ -51,8 +58,14 @@ void selection(int arr[]) {
 }
 
 // 삽입 정렬
-void insertion(int arr[25]) {
-
+void insertion(int arr[]) {
+	for (int i = 0; i < 25; i++) {
+		for (int j = i; j > 0; j--) {
+			if (arr[j - 1] > arr[j]) {
+				
+			}
+		}
+	}
 }
 
 // 버블 정렬
@@ -81,6 +94,8 @@ void array_print(int number) {
 
 //메인함수 시작
 int main() {
+
+
 
 	//입력받는 숫자 받기
 	int number;
@@ -126,8 +141,6 @@ int main() {
 			case 7:
 				printf("<종료>");
 				exit(0);
-
-
 		}
 
 	}
