@@ -11,7 +11,6 @@
 #include <Windows.h>
 
 
-
 // 많이 쓸거 같아서 하는 swap 함수화
 void swap(int a, int b) {
 	int temp;
@@ -170,7 +169,6 @@ int main() {
 
 	// 정렬 종류 출력
 	print_array();
-
 
 	{ // 번호 입력 받기
 		printf("번호 입력 : ");
