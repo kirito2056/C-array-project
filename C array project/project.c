@@ -76,8 +76,6 @@ void selection(int arr[]) {
 	int temp;
 
 	for (int i = 0; i < 25; i++) {
-
-		// 정렬 종류 출력
 		min = i;
 		
 		//    정렬되지 않은 값중            가장 작은값 선택   min에 저장
@@ -87,16 +85,19 @@ void selection(int arr[]) {
 		temp = arr[i];
 		arr[i] = arr[min];
 		arr[min] = temp;
-
 	}
 }
 
 // 삽입 정렬
 void insertion(int arr[]) {
+	int temp;
 	for (int i = 0; i < 25; i++) {
 		for (int j = i; j > 0; j--) {
 			if ( arr[j-1] > arr[j]) {
-				swap(arr[j - 1], arr[j]);
+				temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+			
 			}
 		}
 	}
