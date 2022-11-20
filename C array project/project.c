@@ -126,6 +126,35 @@ void array_print(int number) {
 	
 }
 
+// switch문을 이용한 정렬 실행
+void start_array(int number, int arr[]) {
+switch (number) {
+	default:
+		printf("<번호 오류>\n");
+		break;
+	case 1:
+		selection(arr);
+		break;
+	case 2:
+		insertion(arr);
+		break;
+	case 3:
+		bubble(arr);
+		break;
+	case 4:
+		quick(arr);
+		break;
+	case 5:
+		merge(arr);
+		break;
+	case 6:
+		heap(arr);
+		break;
+	case 7:
+		exit(0);
+	}
+}
+
 //메인함수 시작
 int main() {
 	//입력받는 숫자 받기
@@ -141,44 +170,21 @@ int main() {
 	// 정렬 종류 출력
 	print_array();
 
+
 	{ // 번호 입력 받기
 		printf("번호 입력 : ");
 		scanf("%d", &number);
 	}
+
+	// 선택한 정렬 출력
+	selected_array(number);
 
 	{ // 정렬 전 값 출력
 		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
 		printf("\n");
 	}
 
-	{ // switch문을 이용한 정렬 실행
-		switch (number) {
-			default :
-				printf("<번호 오류>\n");
-				break;
-			case 1:
-				selection(arr);
-				break;
-			case 2:
-				insertion(arr);
-				break;
-			case 3:
-				bubble(arr);
-				break;
-			case 4:
-				quick(arr);
-				break;
-			case 5:
-				merge(arr);
-				break;
-			case 6:
-				heap(arr);
-				break;
-			case 7:
-				printf("<종료>");
-				exit(0);
-		}
-	}
+	start_array(number, arr);
 
 	{// 결과값 출력
 		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
