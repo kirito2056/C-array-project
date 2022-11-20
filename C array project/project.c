@@ -10,6 +10,15 @@
 // 창 크기 조절을 위한 라이브러리
 #include <Windows.h>
 
+// 많이 쓸거 같아서 하는 swap 함수화
+void swap(int a, int b) {
+	int temp;
+	
+	temp = a;
+	a = b;
+	b = temp;
+}
+
 // 정렬 종류 출력
 void print_array() {
 
@@ -61,7 +70,7 @@ void insertion(int arr[]) {
 	for (int i = 0; i < 25; i++) {
 		for (int j = i; j > 0; j--) {
 			if ( arr[j-1] > arr[j]) {
-
+				swap(arr[j - 1], arr[j]);
 			}
 		}
 	}
@@ -93,9 +102,6 @@ void array_print(int number) {
 
 //메인함수 시작
 int main() {
-
-
-
 	//입력받는 숫자 받기
 	int number;
 
@@ -145,8 +151,6 @@ int main() {
 	}
 
 	{// 결과값 출력
-		printf("%d\n", number);
-
 		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
 	}
 }
