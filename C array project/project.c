@@ -51,7 +51,7 @@ void selected_array(int number) {
 			printf("<선택 정렬>\n");
 			break;
 		case 2:
-			pritnf("<삽입 정렬>\n");
+			printf("<삽입 정렬>\n");
 			break;
 		case 3:
 			printf("<버블 정렬>\n");
