@@ -146,6 +146,11 @@ int main() {
 		scanf("%d", &number);
 	}
 
+	{ // 정렬 전 값 출력
+		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+		printf("\n");
+	}
+
 	{ // switch문을 이용한 정렬 실행
 		switch (number) {
 			default :
