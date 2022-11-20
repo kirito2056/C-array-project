@@ -10,6 +10,8 @@
 // 창 크기 조절을 위한 라이브러리
 #include <Windows.h>
 
+
+
 // 많이 쓸거 같아서 하는 swap 함수화
 void swap(int a, int b) {
 	int temp;
@@ -42,10 +44,34 @@ void print_array() {
 	printf("\n");
 }
 
+// 선택한 정렬 출력
+void selected_array(int number) {
+	switch (number) {
+		case 1:
+			printf("<선택 정렬>\n");
+			break;
+		case 2:
+			pritnf("<삽입 정렬>\n");
+			break;
+		case 3:
+			printf("<버블 정렬>\n");
+			break;
+		case 4:
+			printf("<퀵 정렬>\n");
+			break;
+		case 5:
+			printf("<합병 정렬>\n");
+			break;
+		case 6:
+			printf("<힙 정렬>\n");
+			break;
+		case 7:
+			printf("<종료>");
+	}
+}
+
 // 선택 정렬
 void selection(int arr[]) {
-	printf("<선택 정렬>\n");
-
 	int min;
 	int temp;
 
@@ -147,7 +173,6 @@ int main() {
 				printf("<종료>");
 				exit(0);
 		}
-
 	}
 
 	{// 결과값 출력
