@@ -178,15 +178,18 @@ int main() {
 	// 선택한 정렬 출력
 	selected_array(number);
 
+	// 정렬하기
+	start_array(number, arr);
+
 	{ // 정렬 전 값 출력
 		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
 		printf("\n");
 	}
 
-	start_array(number, arr);
 
-	{// 결과값 출력
-		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
-	}
+	// 결과값 출력
+	for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+
+
 }
 
