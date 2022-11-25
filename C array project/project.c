@@ -191,11 +191,37 @@ void mergesort(int arr[], int low, int high)
 
 // 힙 정렬
 void heap(int arr[25]) {
+	int x, root, t;
+	for (int i = 0; i < 25; i++) {
+		x = i;
+		do {
+			root = (x - 1) / 2;
+			if (arr[root] < arr[x]) {
+				t = arr[root];
+				arr[root] = arr[x];
+				arr[x] = t;
+			}
+			x = root;
+		} while (x != 0);
+	}
 
-}
-
-void array_print(int number) {
-	
+	for (int j = 24; j >= 0; j--) {
+		t = arr[0];
+		arr[0] = arr[j];
+		arr[j] = t;
+		root = 0;
+		do {
+			x = 2 * root + 1;
+			if ((arr[x] < arr[x + 1]) && x < j - 1)
+				x++;
+			if (arr[root] < arr[x] && x < j) {
+				t = arr[root];
+				arr[root] = arr[x];
+				arr[x] = t;
+			}
+			root = x;
+		} while (x < j);
+	}
 }
 
 // switch문을 이용한 정렬 실행
