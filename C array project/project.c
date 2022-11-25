@@ -10,7 +10,6 @@
 // 창 크기 조절을 위한 라이브러리
 #include <Windows.h>
 
-
 // 많이 쓸거 같아서 하는 swap 함수화
 void swap(int a, int b) {
 	int temp;
@@ -104,13 +103,54 @@ void insertion(int arr[]) {
 
 // 버블 정렬
 void bubble(int arr[25]) {
-
+	int temp;
+	for (int i = 0; i < 25 - 1; i++)
+	{
+		for (int j = 0; j < 25 - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
 }
 
 // 퀵 정렬
-void quick(int arr[25]) {
+void quick(int arr[25], int L, int R) {
+	int left = L, right = R;
+	int center = arr[(L + R) / 2];    // center 설정 (가운데) 
+	int temp;
+	// 반복해라
+	do
+	{
+		while (arr[left] < center)    // left가 center보다 큰 값을 만남 || center 만날 때까지 
+			left++;
+		while (arr[right] > center)    // right가 center보다 작은 값을 만남 || center 만날 때까지 
+			right--;
+		if (left <= right)    // left가 right보다 왼쪽에 있는가?
+		{
+			// arr[left], arr[right] 교환
+			temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
 
+			/*left 오른쪽으로 한칸, right 왼쪽으로 한칸 이동*/
+			left++;
+			right--;
+		}
+	} while (left <= right);    // left가 right 보다 오른쪽에 있을 때까지
+
+  /* recursion */
+	if (L < right)
+		quick(arr, L, right);    // 왼쪽 배열 반복 
+
+	if (left < R)
+		quick(arr, left, R);    // 오른쪽 배열 반복 
 }
+
 
 // 합병 정렬
 void merge(int arr[25]) {
@@ -142,7 +182,7 @@ switch (number) {
 		bubble(arr);
 		break;
 	case 4:
-		quick(arr);
+		quick(arr, 0, 24);
 		break;
 	case 5:
 		merge(arr);
@@ -178,18 +218,15 @@ int main() {
 	// 선택한 정렬 출력
 	selected_array(number);
 
+	// 정렬하기 전 배열 출력
+	for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+	printf("\n");
+
 	// 정렬하기
 	start_array(number, arr);
 
-	{ // 정렬 전 값 출력
-		for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
-		printf("\n");
-	}
-
-
-	// 결과값 출력
+	// 정렬한 후 배열 출력
 	for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
-
 
 }
 
