@@ -10,15 +10,6 @@
 // 창 크기 조절을 위한 라이브러리
 #include <Windows.h>
 
-// 많이 쓸거 같아서 하는 swap 함수화
-void swap(int a, int b) {
-	int temp;
-	
-	temp = a;
-	a = b;
-	b = temp;
-}
-
 // 정렬 종류 출력
 void print_array() {
 
@@ -155,7 +146,7 @@ void quick(int arr[25], int L, int R) {
 // 합병 정렬
 void merge(int arr[25], int low, int mid, int high)
 {
-	int b[10] = { 0 };
+	int b[100] = { 0 };
 	int k = 0;
 	int i = low, j = mid + 1;
 
@@ -186,9 +177,16 @@ void merge(int arr[25], int low, int mid, int high)
 		arr[p++] = b[l];
 	}
 }
+void mergesort(int arr[], int low, int high)
+{
+	if (high <= low)
+		return;
+	int mid;
+	mid = (low + (high - low) / 2);
 
-void merge() {
-
+	mergesort(arr, low, mid);
+	mergesort(arr, mid + 1, high);
+	merge(arr, low, mid, high);
 }
 
 // 힙 정렬
@@ -219,7 +217,7 @@ switch (number) {
 		quick(arr, 0, 24);
 		break;
 	case 5:
-		merge(arr);
+		mergesort(arr, 0, 24);
 		break;
 	case 6:
 		heap(arr);
