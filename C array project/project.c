@@ -153,7 +153,41 @@ void quick(int arr[25], int L, int R) {
 
 
 // 합병 정렬
-void merge(int arr[25]) {
+void merge(int arr[25], int low, int mid, int high)
+{
+	int b[10] = { 0 };
+	int k = 0;
+	int i = low, j = mid + 1;
+
+	while (i <= mid && j <= high)
+	{
+		if (arr[i] <= arr[j])
+		{
+			b[k++] = arr[i];
+			i++;
+		}
+		else {
+			b[k++] = arr[j];
+			j++;
+		}
+	}
+	while (i <= mid)
+	{
+		b[k++] = arr[i++];
+	}
+	while (j <= high)
+	{
+		b[k++] = arr[j++];
+
+	}
+	int p = low;
+	for (int l = 0; l < k; l++)
+	{
+		arr[p++] = b[l];
+	}
+}
+
+void merge() {
 
 }
 
