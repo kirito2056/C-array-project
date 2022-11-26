@@ -35,6 +35,7 @@ void print_array() {
 
 // 선택한 정렬 출력
 void selected_array(int number) {
+	// switch문 활용
 	switch (number) {
 		case 1:
 			printf("<선택 정렬>\n");
@@ -269,8 +270,10 @@ int main() {
 	print_array();
 
 	{ // 번호 입력 받기
-		printf("번호 입력 : ");
-		scanf("%d", &number);
+		do {
+			printf("번호 입력\n");
+			scanf("%d", &number);
+		} while (0 < number && number < 8);
 	}
 
 	// 선택한 정렬 출력
