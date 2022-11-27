@@ -55,8 +55,6 @@ void selected_array(int number) {
 		case 6:
 			printf("<힙 정렬>\n");
 			break;
-		case 7:
-			printf("<종료>");
 	}
 }
 
@@ -227,7 +225,7 @@ void heap(int arr[25]) {
 
 // switch문을 이용한 정렬 실행
 void start_array(int number, int arr[]) {
-switch (number) {
+	switch (number) {
 	default:
 		printf("<번호 오류>\n");
 		break;
@@ -249,45 +247,51 @@ switch (number) {
 	case 6:
 		heap(arr);
 		break;
-	case 7:
-		exit(0);
 	}
 }
 
 //메인함수 시작
 int main() {
-	//입력받는 숫자 받기
+	//입력받는 숫자 받을 변수 생성
 	int number;
 
-	//난수 생성하기
+	// 생성된 난수 저장할 배열 arr 생성
 	int arr[25];
-
-	//난수 생성 및 배열에 저장
-	srand((unsigned)time(NULL));
-	for (int i = 0; i < 25; i++) arr[i] = 1 + rand() % 100;
 
 	// 정렬 종류 출력
 	print_array();
 
 	{ // 번호 입력 받기
 		do {
+
+			//난수 생성 및 배열에 저장
+			srand((unsigned)time(NULL));
+			for (int i = 0; i < 25; i++) arr[i] = 1 + rand() % 100;
+
 			printf("번호 입력\n");
 			scanf("%d", &number);
-		} while (0 < number && number < 8);
+
+			// 입력받은 숫자가 7일때, 종료하기
+			if (number == 7) break;
+
+			// 선택한 정렬 출력
+			selected_array(number);
+
+			// 정렬하기 전 배열 출력
+			for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+			printf("\n");
+
+			// 정렬하기
+			start_array(number, arr);
+
+			// 정렬한 후 배열 출력
+			for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+
+		} while (number != 7);
 	}
 
-	// 선택한 정렬 출력
-	selected_array(number);
+	printf("<종료>");
 
-	// 정렬하기 전 배열 출력
-	for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
-	printf("\n");
-
-	// 정렬하기
-	start_array(number, arr);
-
-	// 정렬한 후 배열 출력
-	for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
 
 }
 
