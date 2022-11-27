@@ -99,10 +99,13 @@ void insertion(int arr[]) {
 // 버블 정렬
 void bubble(int arr[25]) {
 	int temp;
+	// 25번 반복
 	for (int i = 0; i < 25 - 1; i++)
 	{
-		for (int j = 0; j < 25 - 1 - i; j++)
+		// 25 - 1(처음거) - i(이미 한거)만큼 반복
+		for (int j = 0; j < 24 - i; j++)
 		{
+			// arr[j]가 arr[j+1]보다 큰가?
 			if (arr[j] > arr[j + 1])
 			{
 				temp = arr[j];
@@ -154,8 +157,7 @@ void merge(int arr[25], int low, int mid, int high)
 	int k = 0;
 	int i = low, j = mid + 1;
 
-	while (i <= mid && j <= high)
-	{
+	while (i <= mid && j <= high) {
 		if (arr[i] <= arr[j])
 		{
 			b[k++] = arr[i];
@@ -166,18 +168,14 @@ void merge(int arr[25], int low, int mid, int high)
 			j++;
 		}
 	}
-	while (i <= mid)
-	{
+	while (i <= mid) {
 		b[k++] = arr[i++];
 	}
-	while (j <= high)
-	{
+	while (j <= high) {
 		b[k++] = arr[j++];
-
 	}
 	int p = low;
-	for (int l = 0; l < k; l++)
-	{
+	for (int l = 0; l < k; l++) {
 		arr[p++] = b[l];
 	}
 }
