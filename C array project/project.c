@@ -78,18 +78,23 @@ void selection(int arr[]) {
 
 // 삽입 정렬
 void insertion(int arr[]) {
-	int temp;
-	for (int i = 0; i < 25; i++) {
-		for (int j = i; j > 0; j--) {
-			if ( arr[j-1] > arr[j]) {
-				temp = arr[j - 1];
-				arr[j - 1] = arr[j];
-				arr[j] = temp;
-			
-			}
+	int temp, key, j;
+
+	// arr[0]값은 정렬할 필요 없음
+	for (int i = 1; i < 25; i++) {
+
+		key = arr[i]; // 현재 삽입될 숫자인 i번째 정수를 key 변수로 복사
+
+		for (j = i - 1; j >= 0 && arr[j] > key; j--) { // key가 더 큰 값일 때까지 
+			arr[j + 1] = arr[j]; // 한 칸 뒤로 이동 
 		}
+
+		arr[j + 1] = key; // 알맞은 위치에 key 삽입 
+
 	}
 }
+
+
 
 // 버블 정렬
 void bubble(int arr[25]) {
@@ -268,8 +273,7 @@ int main() {
 			srand((unsigned)time(NULL));
 			for (int i = 0; i < 25; i++) arr[i] = 1 + rand() % 100;
 
-			printf("번호 입력\n");
-			scanf("%d", &number);
+			printf("번호 입력\n"); scanf("%d", &number);
 
 			// 입력받은 숫자가 7일때, 종료하기
 			if (number == 7) break;
@@ -278,14 +282,13 @@ int main() {
 			selected_array(number);
 
 			// 정렬하기 전 배열 출력
-			for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
-			printf("\n");
+			for (int i = 0; i < 25; i++) printf("%d ", arr[i]); printf("\n");
 
 			// 정렬하기
 			start_array(number, arr);
 
 			// 정렬한 후 배열 출력
-			for (int i = 0; i < 25; i++) printf("%d ", arr[i]);
+			for (int i = 0; i < 25; i++) printf("%d ", arr[i]); printf("\n");
 
 		} while (number != 7);
 	}
