@@ -1,0 +1,7 @@
+﻿  project.c
+C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\project.c(81,6): warning C4101: 'temp' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 18 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  C array project.vcxproj -> C:\Users\user\OneDrive\바탕 화면\C 정렬 프로젝트\C-array-project\C array project\x64\Release\C array project.exe
